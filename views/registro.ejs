@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/css/autenticacion.css">
+<%-include("./partials/head")%>
+<!-- carga de css -->
+<%-include("./partials/closeHead")%>
+<main class="form-signin contenedor w-100 m-auto">
+  <div class="alert alert-danger esconderError w-75 m-auto mt-3 mb-5" role="alert" id="alert">
+    mensaje
+  </div>
+   <div class="formBox p-5 mt-5">
+    <form action="/registro" method="post" class="formulario">
+      <!--  <img class="mb-4" src="https://ih1.redbubble.net/image.438908244.6144/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="" width="72" height="57"> -->
+       <h1 class="mb-5">Registro</h1>
+   
+       <div class="form-floating">
+         <input name="email" type="email" class="form-control mb-3" id="floatingInput" placeholder="name@example.com">
+         <label for="floatingInput">Email </label>
+       </div>
+       <div class="form-floating">
+         <input name="username" type="text" class="form-control mb-3" id="floatingInput" placeholder="neo">
+         <label for="floatingInput">Username</label>
+       </div>
+       <div class="form-floating">
+         <input name="nombre" type="text" class="form-control mb-3" id="floatingInput" placeholder="Thomas Andersson">
+         <label for="floatingInput">Nombre</label>
+       </div>
+       <div class="form-floating">
+         <input name="password" type="password" class="form-control mb-3" id="floatingPassword" placeholder="Password">
+         <label for="floatingPassword">Password</label>
+       </div>
+       <!-- confirmar password ------ -->
+       <div class="form-floating">
+         <input name="confirmacion" type="password" class="form-control mb-3" id="floatingPassword" placeholder="Password">
+         <label for="floatingPassword">Confirmar Password</label>
+       </div>
+       <p class="esconderError textoError" id="errorMsg">Password no coincide</p>
+       <div class="checkbox mb-3">
+       </div>
+       <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
+       <p class="mt-5 mb-3 text-muted">©AR 2022</p>
+     </form>
+   </div>
+  </main>  
+<script src="js/registro.js"></script>
+<%-include("./partials/foot")%>

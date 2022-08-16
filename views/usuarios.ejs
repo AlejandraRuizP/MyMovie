@@ -1,0 +1,34 @@
+<%-include("./partials/head")%>
+
+<%-include("./partials/navbar3")%>
+<!-- carga de css -->
+<%-include("./partials/closeHead")%>
+<div class="usuarios">
+  <div class="tablaUsuarios mt-5 mb-5 p-3">
+    <h1>Usuarios</h1>
+    <% for(i=0; i<usuarios.length;i++){ %>
+    
+      <div class="col " style="margin-bottom: 20px; ">
+        <tr>
+          <td><input id="nombre" name="nombre" type="text" class="card-title" value="<%= usuarios[i].name %>"></td>
+          <td><input id="email" name="email" type="text" class="card-title" value="<%= usuarios[i].email %>" disabled></td>
+          <td><input id="username" name="username" type="text" class="card-title" value="<%= usuarios[i].username %>"></td>
+          <!-- <td><input id="rol" name="rol" type="text" class="card-title" value="<%= usuarios[i].idRol == 2 ? "Usuario" : "Administrador" %>" ></td> -->
+          <td><input name="username" type="text" class="card-title" value="<%= usuarios[i].username %>" hidden></td>
+          <select name="rol" id="rol">
+            <option value="<%= usuarios[i].idRol %>""><%= usuarios[i].idRol == 2 ? "Usuario" : "Administrador" %></option>
+            <option value="<%= usuarios[i].idRol==2? 1:2 %>""><%= usuarios[i].idRol == 2 ? "Administrador" : "Usuario" %></option>
+          </select>
+          <button name="<%= usuarios[i].email %>" class="btnEliminar btn btn-success">Eliminar</button>
+          <button name="<%= usuarios[i].email %>" class="btnEditar btn btn-success">Editar</button>
+          <hr>
+        </tr>
+             
+      </div>
+        <% } %>    
+     <!--    <a class="btn btn-primary" href="/home" role="button" >Volver</a> -->
+  </div>    
+      
+</div>
+<script src="js/usuarios.js"></script>
+<%-include("./partials/foot")%>

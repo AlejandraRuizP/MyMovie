@@ -1,0 +1,44 @@
+<div class="container ">
+    <div class="w-50 m-auto contenedor mt-3">
+        <h2 class="mt-3">Contactános</h2> <br>
+        <div>
+          <form action="/contacto" method="POST" class="row g-3">
+            <div class="col-md-4">
+              <label for="validationServer01" class="form-label">Nombre </label>
+              <input name="nombre" type="text" class="form-control is-valid" id="validationServer01" value="<%=usuario.nombre %>" required>
+              <div class="valid-feedback">
+                Completo
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">Apellido</label>
+              <input name="apellido" type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+              <div class="valid-feedback">
+               Completo
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServerUsername" class="form-label">Email</label>
+              <div class="input-group has-validation">
+               <!--  <span class="input-group-text" id="inputGroupPrepend3">@</span> -->
+                <input name="email" type="text" class="form-control is-invalid" id="validationServerUsername" value="<%=usuario.email %>" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                  Ingrese un Email.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="validationTextarea" class="form-label">Contenido</label>
+                <textarea name="textarea" class="form-control" id="validationTextarea" placeholder="" required></textarea>
+                <div class="invalid-feedback">
+                  Debe ingresar un mensaje
+                </div>
+              </div>
+            <div class="col-12">
+              <a href="/"><button class="btn btn-primary mb-3" type="submit">Enviar</button></a>
+            </div>
+          </form>
+         </div>
+    </div>
+
+  </div>

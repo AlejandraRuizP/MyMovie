@@ -1,0 +1,25 @@
+
+<%-include("./partials/head") %>
+<% if(usuario.rol == 1){ %>
+    <%-include("./partials/navbar3")%>
+<% }else{ %>
+    <%-include("./partials/navbar2")%>
+<%} %>
+
+
+<%-include("./partials/carrusel")%>
+<%-include("./partials/closeHead")%>
+<div class="w-75 m-auto contenedor mt-3">
+    <div class="row row-cols-auto">
+        <% for(i=0;i< datos.length; i++){ %>
+            <div class="col" style="margin-bottom: 20px;">
+                    <div class="card-body">
+                      <a href="/pelicula/<%=datos[i].id %> "> <img src="<%= datos[i].ruta%>" alt="" height="300px" width="211px"></a>
+                      <h5 style="width: 213px; height: 50px; background-color: red"><%= datos[i].nombre%></h5>
+                    </div>
+            </div>
+        <% } %>
+    </div>                                                    
+</div>
+
+<%-include("./partials/foot")%>

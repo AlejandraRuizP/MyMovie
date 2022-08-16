@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/autenticacion.css">
+<%-include("./partials/head")%>
+<%-include("./partials/closeHead")%>
+<main class="form-signin contenedor w-100 m-auto ">
+  <div class="alert alert-danger esconderError w-75 m-auto mt-3 mb-5" role="alert" id="alert">
+    mensaje
+  </div>
+  <div class="formBox p-5 mt-5">
+    <form action="/login" method="post" class="formulario">
+      <h1 class="mb-5">MyMovie</h1>
+  
+      <div class="form-floating">
+        <input name="email" type="email" class="form-control mb-3" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input name="password" type="password" class="form-control mb-3" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign in</button>
+      <p>You are not registered? click <a class="w-100 " href="/registro">here</a></p>
+      
+      <p class="mt-5 mb-3 text-muted">©AR 2022</p>
+    </form>
+  </div>
+</main>  
+<!-- carga de js -->
+<script src="js/getToken.js"></script>
+<%-include("./partials/footLogin")%>

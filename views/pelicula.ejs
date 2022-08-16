@@ -1,0 +1,88 @@
+
+<%-include("./partials/head")%>
+
+<%if(usuario){%>
+  <% if(usuario.rol == 1){ %>
+      <%-include("./partials/navbar3")%>
+  <% }else{ %>
+      <%-include("./partials/navbar2")%>
+  <%} %>
+ 
+  <%}else{%>
+      <%-include("./partials/navbar")%>
+  <%}%>
+
+
+<%-include("./partials/closeHead")%>
+
+<body >
+ 
+  <div class="w-75 m-auto mt-5 mb-5 pt-3 ">
+    
+    
+    <% for(i=0;i< pelicula.length; i++){ %>
+      <div class="contenido">
+       
+        <div class="m-5"  id="imgPelicula">
+          <img src= "<%= pelicula.ruta %>" alt="" height="500px">
+        </div>
+        
+         <div class="m-5">
+          <div class="titulo m-auto mt-5 mb-5 pt-5">
+            <h1 class="text-start"><%= pelicula[i].nombre%></h1>
+          </div>
+          <h3 class="text-start"><%= pelicula[i].sinopsis %> </h3>
+          <h3 class="text-start">Director: <%= pelicula[i].director %> </h3>
+          <!-- <h4 class="text-start">Resparto: <%= pelicula[i].casting %> </h4> -->
+          <h5 class="text-start">Año de estreno: <%= pelicula[i].year %> </h5> <br>
+          <a id="btn-trailer" class="btn btn-primary text-start" href="<%= pelicula[i].trailer %>" role="button"  target="_blank" ><i class="fa-solid fa-play"></i> Ver trailer</a> 
+          <button class="megusta" id="<%= pelicula[i].id %>" name="">❤️</button>
+           
+            <button class="noMegusta" id="<%= pelicula[i].id %>" name=""> 🤍</button> <br><br>
+            <div class="alert alert-success" id="agregar" role="alert">
+              Agregado a favoritos
+            </div>
+            <div class="alert alert-danger" id="eliminar" role="alert">
+              Eliminado de favoritos
+            </div>
+          <!-- <%if(pelicula[i].emailUsuario == usuario.email && pelicula[i].calificacion == 1 ){%>
+            <button class="megusta" id="<%= pelicula[i].id %>" name="">❤️</button>
+            <%}else{%>
+            <button class="noMegusta" id="<%= pelicula[i].id %>" name=""> 🤍</button>
+            <% } %>  -->
+            
+         </div>
+        </div>
+    <% } %>                                       
+</div>
+<div class="peliculas-recomendadas contenedor">
+<div class="contenedor-titulo-controles">
+<h3>Películas recomendadas</h3>
+<div class="indicadores">
+  <button></button>
+  <button></button>
+</div>
+</div>
+
+<div class="contenedor-principal contenedor">
+
+<button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fa-solid fa-circle-arrow-left"></i></button>
+
+<div class="contenedor-carrusel">
+<div class="carrusel">
+  <% for(i=0;i< datos.length; i++){ %>
+             <div class="pelicula">
+              <a href="/pelicula/<%=datos[i].id %> " > <img src="<%= datos[i].ruta%>" alt="" height="300px" width="211px"></a>
+              <h5  style="width: 213px; height: 50px; background-color: red"><%= datos[i].nombre%></h5> 
+             </div>
+
+  <% } %>
+</div>
+</div>
+<button role="butto" id="flecha-derecha" class="flecha-derecha"><i class="fa-solid fa-circle-arrow-right"></i></i></button>
+</div>
+</div>
+</body>
+<!-- carga de js -->
+ <script src="/js/carruselpelicula.js"></script> 
+<%-include("./partials/foot")%>

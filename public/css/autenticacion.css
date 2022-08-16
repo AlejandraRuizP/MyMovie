@@ -1,0 +1,27 @@
+.logo{
+    width: 200px;
+}
+
+.formularioSesion{
+    max-width: 400px;
+    padding: 25px;
+}
+.formulario{
+    max-width: 400px;
+    padding: 25px;
+}
+.formBox{
+    max-width: 600px;
+    padding: 25px;
+    background-color: #E9DEDE;
+}
+.esconderError{
+    display: none;
+}
+.mostrarError{
+    display: block;
+
+}
+.textoError{
+    color: red
+}

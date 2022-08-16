@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="css/autenticacion.css">
+<%-include("./partials/head")%>
+<%-include("./partials/navbar3")%>
+
+<!-- carga de css -->
+<%-include("./partials/closeHead")%> <br><br>
+<div class="alert alert-danger esconderError w-75 m-auto mt-3 mb-5" role="alert" id="alert"></div>
+<div class="w-50 m-auto contenedor mt-3">
+
+  <form id="form" action="/agregarPelicula" method="post" enctype="multipart/form-data">
+    
+    <input class="form-control mb-3" type="text" name="nombre" id="nombre" placeholder="Pelicula">
+    <input class="form-control  mb-3 " type="text" name="year" id="anio" placeholder="Año de estreno">
+    <input class="form-control  mb-3" type="text" name="director" id="director" placeholder="Director">
+    <input class="form-control  mb-3" type="text" name="casting" id="actores" placeholder="Reparto">
+    <input class="form-control  mb-3" type="text" name="sinopsis" id="sinopsis" placeholder="Sinopsis">
+    <input class="form-control  mb-3" type="text" name="genero" id="genero" placeholder="Genero">
+    <input class="form-control  mb-3" type="text" name="vigente" id="vigente" style="display: none;" value="1">
+    <input class="form-control  mb-3" type="text" name="trailer" id="trailer" placeholder="Trailer">
+    <input  type="file" name="portada" id="portada">
+  <input type="submit" name="enviar" id="enviar" value="Enviar" class="btn btn-success">
+  </form>                                                   
+</div>
+<!-- carga de js -->
+<!--   <script src="js/agregarPelicula.js"></script> -->  
+
+<%-include("./partials/foot")%>
