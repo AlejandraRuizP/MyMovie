@@ -2,7 +2,7 @@ window.onload= (e)=>{
     let form = document.querySelector('form')
     let alertMsj = document.getElementById('alert')
     form.addEventListener('submit', async(e)=>{
-        e.preventDefault()//trim() -> Elimina espacios vacios
+        e.preventDefault()
         if(form.password.value.trim()===''){ return }
 
         let errorMsg = document.getElementById('errorMsg')

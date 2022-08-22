@@ -14,8 +14,7 @@
 
 <!-- carga de css -->
 <%-include("./partials/closeHead")%>
-<h1>Calificaciones</h1>
-    <h1>Bienvenido <%=usuario.nombre %> </h1>
+    <h1 style="color: white;">Bienvenido <%=usuario.nombre %> </h1>
     <div class="w-75 m-auto contenedor mt-3">
         <div class="row row-cols-auto">
             <% for(i=0;i< calificacion.length; i++){ %>
@@ -23,7 +22,7 @@
                         <div class="card-body">
                           <a href="/pelicula/<%=calificacion[i].idPelicula %> "> <img src="<%= calificacion[i].ruta%>" alt="" height="300px" width="211px"></a>
                           <h5 style="width: 213px; height: 50px; background-color: red"><%= calificacion[i].nombre%></h5>
-                          <h5><%= calificacion[i].calificacion == 1 ? "Me gusta" : "Sin clasificar" %></h5>
+                          <h5 style="color: white;"><%= calificacion[i].calificacion == 1 ? "Me gusta" : "Sin clasificar" %></h5>
                         </div>
                 </div>
             <% } %>

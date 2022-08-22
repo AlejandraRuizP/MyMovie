@@ -9,17 +9,8 @@ window.onload = ()=>{
     const agregarAlert = document.querySelector('#agregar')
     const eliminarAlert = document.querySelector('#eliminar')
     const cambioAlert = document.querySelector('#cambio')
-    const fila = document.querySelector('.contenedor-carrusel')
-    const peliculas = document.querySelector('.pelicula')
-    const flechaIzquierda =document.querySelector('.flecha-izquierda')
-    const flechaDerecha =document.querySelector('.flecha-derecha')
 
-    flechaDerecha.addEventListener('click',()=>{
-        fila.scrollLeft += fila.offsetWidth;
-    })
-    flechaIzquierda.addEventListener('click',()=>{
-        fila.scrollLeft -= fila.offsetWidth;
-    })
+
     meGusta.addEventListener('click', async(e)=>{
         e.preventDefault()
         console.log('megusta')

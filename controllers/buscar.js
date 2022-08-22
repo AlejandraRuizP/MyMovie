@@ -4,6 +4,7 @@ const fs = require('fs')
 const { getHome } = require('./home')
 
 const getNavbar = async (req,res)=>{
+    console.log(req.datos)
     console.log(req.query.busqueda)
    let parametro = req.query.busqueda
     let datos;

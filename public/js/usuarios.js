@@ -1,9 +1,5 @@
 
 window.onload = ()=>{
-   /*  const $ =(id)=>{
-        return document.querySelector(id).value
-    } */
-    //const modal = document.querySelector('.modal fade')
     const modalBody = document.querySelector('.modal-body')
     const modalFooter = document.querySelector('.modal-footer')
     const btnEdit = document.querySelectorAll('.btnEditar')
@@ -19,7 +15,7 @@ window.onload = ()=>{
         let id = e.target.name
         
        try {
-            const response = await fetch(`http://localhost:3000/usuarios/${id}`)
+            const response = await fetch(`/usuarios/${id}`)
             let datos = await response.json()
                 console.log(datos)
                 for( let i=0; i< datos.usuarioP.length;i++){
@@ -68,7 +64,7 @@ window.onload = ()=>{
         })
     }
     const eliminarUsuario = async (id)=>{
-        const response = await fetch('/usuarios/'+id,{
+        const response = await fetch(`/usuarios/${id}`,{
             method: 'DELETE',
         })
         let datos = await response.json()
