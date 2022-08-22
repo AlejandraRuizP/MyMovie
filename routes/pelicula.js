@@ -1,6 +1,6 @@
 const express = require('express')
 
-const {getPelicula,getHome} = require('../controllers/pelicula')
+const {getPelicula,editPelicula} = require('../controllers/pelicula')
 const {verificarSesionCookie, verificarSesionHeader} = require('../middleware/auntenticacion')
 
 const router = express.Router()

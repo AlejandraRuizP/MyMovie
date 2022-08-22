@@ -16,41 +16,30 @@
 <%-include("./partials/closeHead")%>
 
 <body >
- 
   <div class="w-75 m-auto mt-5 mb-5 pt-3 ">
-    
     
     <% for(i=0;i< pelicula.length; i++){ %>
       <div class="contenido">
-       
         <div class="m-5"  id="imgPelicula">
           <img src= "<%= pelicula.ruta %>" alt="" height="500px">
         </div>
-        
          <div class="m-5">
           <div class="titulo m-auto mt-5 mb-5 pt-5">
             <h1 class="text-start"><%= pelicula[i].nombre%></h1>
           </div>
           <h3 class="text-start"><%= pelicula[i].sinopsis %> </h3>
           <h3 class="text-start">Director: <%= pelicula[i].director %> </h3>
-          <!-- <h4 class="text-start">Resparto: <%= pelicula[i].casting %> </h4> -->
           <h5 class="text-start">Año de estreno: <%= pelicula[i].year %> </h5> <br>
           <a id="btn-trailer" class="btn btn-primary text-start" href="<%= pelicula[i].trailer %>" role="button"  target="_blank" ><i class="fa-solid fa-play"></i> Ver trailer</a> 
-          <button class="megusta" id="<%= pelicula[i].id %>" name="">❤️</button>
+          <button class="megusta" id="<%= pelicula[i].id %>" name=""><i class="fa-solid fa-thumbs-up"></i></button>
            
-            <button class="noMegusta" id="<%= pelicula[i].id %>" name=""> 🤍</button> <br><br>
+            <button class="noMegusta" id="<%= pelicula[i].id %>" name=""><i class="fa-solid fa-thumbs-down"></i></button> <br><br>
             <div class="alert alert-success" id="agregar" role="alert">
               Agregado a favoritos
             </div>
             <div class="alert alert-danger" id="eliminar" role="alert">
               Eliminado de favoritos
             </div>
-          <!-- <%if(pelicula[i].emailUsuario == usuario.email && pelicula[i].calificacion == 1 ){%>
-            <button class="megusta" id="<%= pelicula[i].id %>" name="">❤️</button>
-            <%}else{%>
-            <button class="noMegusta" id="<%= pelicula[i].id %>" name=""> 🤍</button>
-            <% } %>  -->
-            
          </div>
         </div>
     <% } %>                                       
@@ -84,5 +73,6 @@
 </div>
 </body>
 <!-- carga de js -->
- <script src="/js/carruselpelicula.js"></script> 
+<!--  <script src="/js/carruselpelicula.js"></script>  -->
+  <script src="/js/editpelicula.js"></script> 
 <%-include("./partials/foot")%>

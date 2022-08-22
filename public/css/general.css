@@ -32,10 +32,10 @@ body{
     display: flex;
     color: #fff;
 }
-#btn-trailer{
+/* #btn-trailer{
     margin-left: -10%;
-}
-.megusta, .noMegusta{
+} */
+.megusta, .noMegusta, .cambio{
     background-color: transparent;
     border: none;
     outline: none;
@@ -43,7 +43,36 @@ body{
     margin-left: 10%;
     font-size: 20px;
 }
-#eliminar,#agregar{
+.megusta{
+    color: green;
+}
+.noMegusta{
+    color: red;
+}
+.cambio{
+    color:white
+}
+
+#nombre{
+    background-color: transparent;
+    font-size: 30px;
+    color: white;
+    border: none;
+    outline: none;
+}
+/* #form #sinopsis{
+    height: 60px;
+} */
+textarea{
+    width: 600px;
+    background-color: transparent; 
+    font-size: 20px;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+#eliminar,#agregar,#cambio{
     display: none;
 }
 

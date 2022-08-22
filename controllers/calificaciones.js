@@ -2,10 +2,10 @@ const {Calificaciones, sequelize} = require('../models')
 const {QueryTypes} = require('sequelize')
 const { Op } = require("sequelize");
 const fs = require('fs')
+
 const getCalificaciones = async (req,res)=>{
     console.log(req.datos)
     id = req.datos.email
-    //res.render('calificaciones',req.datos)
    try {
     let calificacion = await sequelize.query(
         `SELECT "nombre","idPelicula", "emailUsuario", "calificacion" FROM "Calificaciones"	C JOIN "Peliculas" P ON P."id"=C."idPelicula" WHERE "emailUsuario"= '${req.datos.email}'` ,
@@ -28,9 +28,6 @@ const getCalificaciones = async (req,res)=>{
             p.ruta ='img/'+archivo[0]
         }
     });
-    console.log(img)
-    console.log(calificacion)
-    
     res.render('calificaciones',{usuario:req.datos,calificacion})
    
    } catch (error) {
@@ -40,8 +37,6 @@ const getCalificaciones = async (req,res)=>{
 }
 
 const postCalificaciones = async (req,res)=>{
-    console.log(req.body)
-    console.log(req.datos)
     const calificacion = {
         idPelicula: req.body.idPelicula,
         calificacion: req.body.calificación,

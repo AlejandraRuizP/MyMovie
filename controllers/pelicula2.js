@@ -21,8 +21,6 @@ const getPelicula = async (req,res)=>{
      }
     
     const img = fs.readdirSync('public/img');
-    //console.log(img)
-
     let archivo=img.filter( i =>
         i.split('.')[0]== id
     )
@@ -35,14 +33,16 @@ const getPelicula = async (req,res)=>{
 
     let datos;
     try {
-        datos = await Pelicula.findAll()
+        datos = await Pelicula.findAll({
+            where:{
+                vigente:1
+            }
+        })
         //console.log(JSON.stringify(datos,null,2))
         
     } catch (error) {
         console.log('Error al traer usuarios'+error.message)
     }
-    
-
     datos.forEach(async  p=> {
         let archivo=img.filter( i =>
             i.split('.')[0]== p.id
@@ -54,10 +54,6 @@ const getPelicula = async (req,res)=>{
             p.ruta='../img/'+archivo[0]
         }
     });
-    //console.log(pelicula)
-    //console.log(pelicula.ruta)
     return res.render('pelicula2',{pelicula,datos})
 }
-
-
 module.exports={getPelicula}

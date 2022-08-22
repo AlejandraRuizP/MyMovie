@@ -1,0 +1,19 @@
+<%-include("./partials/head") %>
+<%-include("./partials/navbar3")%>
+
+<%-include("./partials/carrusel")%>
+<%-include("./partials/closeHead")%>
+<div class="w-75 m-auto contenedor mt-3">
+    <div class="row row-cols-auto">
+        <% for(i=0;i< datosAdmin.length; i++){ %>
+            <div class="col" style="margin-bottom: 20px;">
+                    <div class="card-body">
+                      <a href="/pelicula/<%=datosAdmin[i].id %> "> <img src="<%= datosAdmin[i].ruta%>" alt="" height="300px" width="211px"></a>
+                      <h5 style="width: 213px; height: 50px; background-color: red"><%= datosAdmin[i].nombre%></h5>
+                    </div>
+            </div>
+        <% } %>
+    </div>                                                    
+</div>
+<%-include("./partials/foot")%>
+<script src="/js/buscar.js"></script>

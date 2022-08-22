@@ -6,29 +6,54 @@
 <div class="usuarios">
   <div class="tablaUsuarios mt-5 mb-5 p-3">
     <h1>Usuarios</h1>
-    <% for(i=0; i<usuarios.length;i++){ %>
-    
-      <div class="col " style="margin-bottom: 20px; ">
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td><input id="nombre" name="nombre" type="text" class="card-title" value="<%= usuarios[i].name %>"></td>
-          <td><input id="email" name="email" type="text" class="card-title" value="<%= usuarios[i].email %>" disabled></td>
-          <td><input id="username" name="username" type="text" class="card-title" value="<%= usuarios[i].username %>"></td>
-          <!-- <td><input id="rol" name="rol" type="text" class="card-title" value="<%= usuarios[i].idRol == 2 ? "Usuario" : "Administrador" %>" ></td> -->
-          <td><input name="username" type="text" class="card-title" value="<%= usuarios[i].username %>" hidden></td>
-          <select name="rol" id="rol">
-            <option value="<%= usuarios[i].idRol %>""><%= usuarios[i].idRol == 2 ? "Usuario" : "Administrador" %></option>
-            <option value="<%= usuarios[i].idRol==2? 1:2 %>""><%= usuarios[i].idRol == 2 ? "Administrador" : "Usuario" %></option>
-          </select>
-          <button name="<%= usuarios[i].email %>" class="btnEliminar btn btn-success">Eliminar</button>
-          <button name="<%= usuarios[i].email %>" class="btnEditar btn btn-success">Editar</button>
-          <hr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Email</th>
+          <th scope="col">Username</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Acciones</th>
         </tr>
-             
-      </div>
-        <% } %>    
+      </thead>
+      <tbody>
+        <% for(i=0; i<usuarios.length;i++){ %>
+    
+          <div class=" table table-striped " style="margin-bottom: 20px; ">
+            <tr>
+              <td><%= usuarios[i].name %></td>
+              <td><%= usuarios[i].email %></td>
+              <td><%= usuarios[i].username %></td>
+              <td><%= usuarios[i].idRol == 2 ? "Usuario" : "Administrador" %></td>
+              <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" name="<%= usuarios[i].email %>" class="btnEliminar btn btn-success">Eliminar</i></button>
+                <button  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" name="<%= usuarios[i].email %>" class="btnEditar btn btn-success">Editar</button></td>
+            </tr>
+                 
+          </div>
+            <% } %>
+      </tbody>
+    </table>
      <!--    <a class="btn btn-primary" href="/home" role="button" >Volver</a> -->
-  </div>    
+  </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary cerrar" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary cambios">Guardar cambios</button> 
+      </div> 
+    </div>
+  </div>
 </div>
-<script src="js/usuarios.js"></script>
+</div>
+<script src="js/usuarios.js" ></script>
+<script src="js/putUser.js" ></script> 
 <%-include("./partials/foot")%>

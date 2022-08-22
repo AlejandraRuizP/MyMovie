@@ -1,4 +1,3 @@
-
 const {Pelicula} = require('../models')
 const path          = require('path')
 
@@ -8,6 +7,7 @@ const getNewMovie = (req,res)=>{
 
 const postNewMovie = async (req,res)=>{
     console.log(req.body)
+    console.log(req.files)
     let id;
     try {
         id = await Pelicula.max('id')+1
@@ -16,7 +16,7 @@ const postNewMovie = async (req,res)=>{
         console.log('Error al buscar Id'+error.message)
     }
     const movie ={
-        nombre: req.body.nombre,
+        nombre: req.body.name,
         year:Number(req.body.year),
         director:req.body.director,
         casting:req.body.casting,
@@ -39,7 +39,7 @@ const postNewMovie = async (req,res)=>{
         console.log('Error al crear pelicula '+error.message)
     } 
     
-    /* let archivo = req.files.portada
+    let archivo = req.files.portada
     console.log(archivo)
     
     let ruta ="public/img/"+id+path.extname(req.files.portada.name);
@@ -48,7 +48,7 @@ const postNewMovie = async (req,res)=>{
         console.log("Error al guardad el archivo:"+err.message)
         return res.status(500).send("Error al guardar archivo")
     }
-   }) */
+   })
     res.redirect('/home')
 }
 module.exports={getNewMovie,postNewMovie}

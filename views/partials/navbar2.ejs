@@ -12,30 +12,19 @@
           <li class="nav-item">
             <a class="nav-link " style="color: #e3f2fd;" href="/calificaciones">Calificaciones</a>
           </li>
-        <!--   <li class="nav-item">
-            <a class="nav-link " style="color: #e3f2fd;" href="/usuarios">Usuarios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " style="color: #e3f2fd;" href="/agregarPelicula">Agregar nueva pelicula</a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link " style="color: #e3f2fd;" href="/contacto">Contacto</a>
           </li>
-         <!--  <li class="nav-item">
-            <a class="nav-link " style="color: #e3f2fd;" href="/registro">Registrarse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link "  style="color: #e3f2fd;" href="/login">Ingresar</a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link " style="color: #e3f2fd;" href="/logout">Salir</a>
           </li>
          
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-white" type="submit">Search</button>
+        <form action="buscar" method="GET" class="d-flex" role="search">
+          <input name="busqueda" class="form-control me-2 inputBuscar" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-white buscar" type="submit">Search</button>
         </form>
+        
       </div>
     </div>
   </nav>

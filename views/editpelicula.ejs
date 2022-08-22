@@ -1,0 +1,87 @@
+<%-include("./partials/head")%>
+<%if(usuario){%>
+  <% if(usuario.rol == 1){ %>
+      <%-include("./partials/navbar3")%>
+  <% }else{ %>
+      <%-include("./partials/navbar2")%>
+  <%} %>
+<%}else{%>
+      <%-include("./partials/navbar")%>
+<%}%>
+<%-include("./partials/closeHead")%>
+<body >
+  <div class="w-75 m-auto mt-5 mb-5 pt-3 ">
+    <% for(i=0;i< pelicula.length; i++){ %>
+      <div class="contenido text-start">
+       
+        <div class="m-5"  id="imgPelicula">
+          <img src= "<%= pelicula.ruta %>" alt="" height="500px">
+        </div>
+         <div class="m-5">
+          <form action="" id="form">
+           <textarea name="nombre" id="nombre" cols="30" rows="1.5"><%= pelicula[i].nombre %></textarea><br>
+            <label for="sinopsis" >Sinopsis:</label><br>
+            <textarea name="sinopsis" id="sinopsis" cols="60" rows="5"><%= pelicula[i].sinopsis %></textarea><br>
+            <label for="director">Director:</label><br>
+            <textarea name="director" id="director" cols="60" rows="1.5"><%= pelicula[i].director %></textarea><br>
+            <label for="casting">Casting:</label><br>
+            <textarea name="casting" id="casting" cols="60" rows="1.5"> <%= pelicula[i].casting %></textarea><br>
+            <label for="genero">Genero:</label><br>
+            <textarea name="genero" id="genero" cols="60" rows="1.5"> <%= pelicula[i].genero %></textarea><br>
+            <label for="year">Año de estreno:</label><br>
+            <textarea name="year" id="year" cols="60" rows="1.5"> <%= pelicula[i].year %></textarea><br>
+            <label for="trailer">Vigente:</label><br>
+            <select name="vigente" id="vigente" class="form-select">
+                <option value="<%= pelicula[i].vigente == 1 ? '1':'2' %>"><%= pelicula[i].vigente == 1 ? 'Vigente':'No vigente' %></option>
+                <option value="<%= pelicula[i].vigente == 1 ? '2':'1' %>"><%= pelicula[i].vigente == 1 ? 'No vigente':'Vigente' %></option>
+            </select><br>
+            <label for="trailer">Trailer:</label><br>
+            <textarea name="trailer" id="trailer" cols="60" rows="1.5"><%= pelicula[i].trailer %></textarea><br> 
+             <a id="btn-trailer" class="btn btn-primary text-start align-items-start" href="<%= pelicula[i].trailer %>" role="button"  target="_blank" ><i class="fa-solid fa-play"></i> Ver trailer</a>  
+            <button class="megusta" id="<%= pelicula[i].id %>" name=""><i class="fa-solid fa-thumbs-up"></i></button>
+            <button class="noMegusta" id="<%= pelicula[i].id %>" name=""><i class="fa-solid fa-thumbs-down"></i></button>
+            <button class="cambio" id="<%= pelicula[i].id %>"><i class="fa-solid fa-floppy-disk cambio"></i></button> <br><br>
+          </form>
+            <div class="text-center">
+                <div class="alert alert-success " id="agregar" role="alert">
+                    Agregado a favoritos
+                  </div>
+                  <div class="alert alert-danger " id="eliminar" role="alert">
+                    Eliminado de favoritos
+                  </div>
+                  <div class="alert alert-secondary " id="cambio" role="alert">
+                     Cambios guardados
+                    </div>
+            </div>
+         </div>
+        </div>
+    <% } %>                                       
+</div>
+<div class="peliculas-recomendadas contenedor">
+<div class="contenedor-titulo-controles">
+<h3>Películas recomendadas</h3>
+<div class="indicadores">
+  <button></button>
+  <button></button>
+</div>
+</div>
+<div class="contenedor-principal contenedor">
+<button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fa-solid fa-circle-arrow-left"></i></button>
+<div class="contenedor-carrusel">
+<div class="carrusel">
+  <% for(i=0;i< datos.length; i++){ %>
+             <div class="pelicula">
+              <a href="/pelicula/<%=datos[i].id %> " > <img src="<%= datos[i].ruta%>" alt="" height="300px" width="211px"></a>
+              <h5  style="width: 213px; height: 50px; background-color: red"><%= datos[i].nombre%></h5> 
+             </div>
+  <% } %>
+</div>
+</div>
+<button role="butto" id="flecha-derecha" class="flecha-derecha"><i class="fa-solid fa-circle-arrow-right"></i></i></button>
+</div>
+</div>
+</body>
+<!-- carga de js -->
+ <!-- <script src="/js/carruselpelicula.js" ></script>  -->
+ <script src="/js/editpelicula.js" ></script> 
+<%-include("./partials/foot")%>

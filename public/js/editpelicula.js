@@ -20,7 +20,7 @@ window.onload = ()=>{
     flechaIzquierda.addEventListener('click',()=>{
         fila.scrollLeft -= fila.offsetWidth;
     })
-    /* meGusta.addEventListener('click', async(e)=>{
+    meGusta.addEventListener('click', async(e)=>{
         e.preventDefault()
         console.log('megusta')
         console.log(meGusta.textContent)
@@ -80,5 +80,5 @@ window.onload = ()=>{
         setTimeout(()=>{
             alerta.style.display = 'none'
         }, 1000)
-    } */
+    }
 }

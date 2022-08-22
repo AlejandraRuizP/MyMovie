@@ -3,8 +3,6 @@ const jwt = require('../utils/jwt')
 const {Usuario} = require('../models')
 require('dotenv').config()
 
-
-
 const getRegister = (req,res)=>{
     res.render('registro')
 }
@@ -52,7 +50,5 @@ const postRegister = async (req,res)=>{
         msg:'autenticación correcta',
         token:token
     })
-   
 }
-
 module.exports = {getRegister,postRegister}

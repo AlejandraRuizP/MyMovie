@@ -1,5 +1,11 @@
-<%-include("./partials/head")%>
-<%-include("./partials/navbar")%>
+
+<%-include("./partials/head") %>
+<% if(usuario.rol == 1){ %>
+    <%-include("./partials/navbar3")%>
+<% }else{ %>
+    <%-include("./partials/navbar2")%>
+<%} %>
+
 
 <%-include("./partials/carrusel")%>
 <%-include("./partials/closeHead")%>
@@ -16,4 +22,4 @@
     </div>                                                    
 </div>
 <%-include("./partials/foot")%>
-<!--  <script src="/js/buscar.js"></script>  -->
+<script src="/js/buscar.js"></script>
