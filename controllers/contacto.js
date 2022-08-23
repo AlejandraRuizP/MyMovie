@@ -19,7 +19,7 @@ const postContact = (req,res)=>{
     let mensaje = 'Mensaje formulario \n';
     mensaje+= req.body.nombre+'\n';
     mensaje+= req.body.email+'\n';
-    mensaje+= req.body.textarea+'\n';
+    mensaje+= req.body.contenido+'\n';
 
     let mail = {
         from : req.body.email,
@@ -31,6 +31,7 @@ const postContact = (req,res)=>{
     transporter.sendMail(mail,(err,res)=>{
         if(err){
             console.log(err.message)
+            
         }else{
             console.log('Email enviado')
         }
