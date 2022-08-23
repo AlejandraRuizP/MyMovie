@@ -18,7 +18,6 @@ const postContact = (req,res)=>{
 
     let mensaje = 'Mensaje formulario \n';
     mensaje+= req.body.nombre+'\n';
-    //mensaje+= req.body.apellido+'\n';
     mensaje+= req.body.email+'\n';
     mensaje+= req.body.textarea+'\n';
 

@@ -52,8 +52,7 @@ const getPelicula = async (req,res)=>{
             p.ruta='../img/'+archivo[0]
         }
     });
-    console.log(pelicula)
-    //console.log(pelicula.ruta)
+    
     if(req.datos.rol == 2){
         return res.render('pelicula',{pelicula,datos,usuario:req.datos})
     }

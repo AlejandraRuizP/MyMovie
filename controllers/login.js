@@ -25,7 +25,7 @@ const postLogin = async (req,res)=>{
 
     if(!(await bcrypt.compare(req.body.password,usuario.password))){ return res.status(500).json({error:'Error de credenciales'})}
     //todo salio ok
-    //res.send(usuario)//ya no lo necesito
+
     const token = await jwt.generarToken(usuario)
     //enviar cookie
     res.cookie(process.env.JWT_COOKIE,token,{httpOnly:true})

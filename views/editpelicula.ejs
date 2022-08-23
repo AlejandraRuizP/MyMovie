@@ -1,9 +1,9 @@
 <%-include("./partials/head")%>
 <%if(usuario){%>
   <% if(usuario.rol == 1){ %>
-      <%-include("./partials/navbar3")%>
+      <%-include("./partials/navbarAdmin")%>
   <% }else{ %>
-      <%-include("./partials/navbar2")%>
+      <%-include("./partials/navbarUser")%>
   <%} %>
 <%}else{%>
       <%-include("./partials/navbar")%>

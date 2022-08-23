@@ -1,7 +1,7 @@
 const {Pelicula} = require('../models')
 const {Op} = require('sequelize')
 const fs = require('fs')
-const { getHome } = require('./home')
+
 
 const getNavbar = async (req,res)=>{
     console.log(req.datos)
@@ -21,15 +21,12 @@ const getNavbar = async (req,res)=>{
         let archivo=img.filter( i =>
             i.split('.')[0]== p.id
         )
-        console.log(archivo)
         if(archivo.length==0){
             p.ruta='img/noimg.png'
         }else{
             p.ruta='img/'+archivo[0]
         }
     });
-    console.log(datos)
-    //return res.send({datos})
     return res.render('buscar',{datos})
         
     } catch (error) {

@@ -38,7 +38,7 @@ const getPelicula = async (req,res)=>{
                 vigente:1
             }
         })
-        //console.log(JSON.stringify(datos,null,2))
+
         
     } catch (error) {
         console.log('Error al traer usuarios'+error.message)

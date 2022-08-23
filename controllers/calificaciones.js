@@ -21,7 +21,7 @@ const getCalificaciones = async (req,res)=>{
         let archivo= img.filter( i =>
             i.split('.')[0]==p.idPelicula
         )
-        console.log(archivo)
+
         if(archivo.length == 0){
             p.ruta = 'img/noimg.png'
         }else{

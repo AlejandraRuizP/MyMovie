@@ -5,7 +5,7 @@ const fs = require('fs')
 const { ALL } = require('dns')
 
 const getHome = async (req,res)=>{
-    //console.log('Datos '+req.datos)
+
     let datosAdmin;
     let datosUser;
     try {
@@ -27,7 +27,7 @@ const getHome = async (req,res)=>{
     }
     
     const img = fs.readdirSync('public/img');
-
+    
     datosAdmin.forEach(async  p=> {
         let archivo=img.filter( i =>
             i.split('.')[0]== p.id
